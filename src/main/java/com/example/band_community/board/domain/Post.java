@@ -8,6 +8,7 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.Id;
 import jakarta.persistence.Lob;
+import jakarta.validation.constraints.NotEmpty;
 import jakarta.validation.constraints.NotNull;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -32,8 +33,10 @@ public class Post {
     private Instant createdAt;
     private Instant deletedAt;
 
+    @NotEmpty
     private String title;
     @Lob
+    @NotEmpty
     private String content;
 
     private String image;
